@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #b239a8;
+    --secondary-color: #179191;
+    --tertiary-color: #8d38fc;
+  }
+  
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+  /* HEADER / NAV BAR STYLES START */
+  
+  header {
+    background-color: #8d38fc;
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky; /*Safari support*/
+    position: sticky;
+    top: 0;
+    z-index: 9999; /*Stack order top*/
+  }
+  
+  header h1 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 36px;
+  }
+  
+  header a {
+    text-decoration: none;
+  }
+  
+  header nav {
+    margin: 7px 0;
+  }
+  
+  header nav ul { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  
+  header nav ul li a {   
+    color: white;
+    padding: 10px 15px;
+    font-weight: lighter;
+    font-size: 1.55vw;
+  }
+  
+/* HEADER / NAV BAR STYLES END */
+
+/* Hero / Headshot STYLES START */
+  .hero {
+    display: flex
+  }
+
+  .hero img {
+    width: 20%;
+  }
+/* Hero / Headshot STYLES END */
+
+  
+  /* FOOTER STYLES START */
+  footer {
+    background-color: #8d38fc;
+    padding: 40px 35px;
+    display: flex;
+    justify-content: space-between;
+    /* try to use flex-basis to shorten gap beteen title and links*/
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  footer h2 {  
+    color: white;
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  
+  footer ul li a {  
+    color: white;
+    padding: 10px 15px;
+    font-weight: lighter;
+    font-size: 1.55vw;
+  }
+   /* FOOTER STYLES END */
+
+  /* Projects STYLES START */
+  .projects {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .project {
+    margin: 20px;
+    flex: 1;
+  }
+  
+  .project img {
+    /*width: 100%;*/
+    height: 300px;
+  }
+  
+  .project:first-child {
+    width: 100%;
+  }
+  .project:first-child img{
+    height: 500px;
+  }
+
+  .project-title h3 {
+    font-size: 28px;
+  }
+  
+  .project-subtitle h4 {
+    font-weight: lighter;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  /* Projects STYLES END */
+
+  /* UTILITIES */ 
+  .flex-row {
+    display: flex;
+  }
+
+  @media screen and (max-width: 980px) {
+    header {
+      position: relative;
+      padding-bottom: 0;
+      justify-content: center;
+    }
+  
+    header h1 {
+      width: 100%;
+      text-align: center;
+    }
+  
+    header nav ul {
+      margin-top: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    header nav ul li a {
+      font-size: 20px;
+    }
+  
+    footer {
+      text-align: center;
+      width: 100%;
+    }
+    
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+  @media screen and (max-width: 575px) {
+    
+    .hero img {
+      width: 100%;
+    }
+  /*
+    .section-title {
+      width: 95%;
+    }
+  
+    .intro p {
+      width: 100%;
+    }
+  
+    .project {
+      flex: 0 100%;
+    }
+  
+    .contact-info {
+      text-align: center;
+    }
+  
+    .contact-info > * {
+      flex: 0 100%;
+    }
+  
+    .contact-form {
+      order: 3;
+    }
+    */
+  }
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    /*
+    section {
+      padding: 30px 15px;
+    }
+  
+    .step h3 {
+      flex: 1 100%;
+      text-align: center;
+    }
+  
+    .step-info {
+      flex: 2 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .step-img {
+      flex: 0 32%;
+      margin-right: 0;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .step-text {
+      flex: 100%;  
+    }
+    */
+  }
