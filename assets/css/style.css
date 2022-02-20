@@ -1,19 +1,24 @@
 :root {
     --primary-color: #b239a8;
     --secondary-color: #179191;
-    --tertiary-color: #8d38fc;
+    --tertiary-color: #6c36b3;
   }
   
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+ }
+
+  .primary-content {
+    max-width: 1028px;
+    margin: 0 auto;
+  }
 
   /* HEADER / NAV BAR STYLES START */
   
   header {
-    background-color: #8d38fc;
+    background-color: #6c36b3;
     padding: 20px 35px;
     display: flex;
     justify-content: space-between;
@@ -58,18 +63,20 @@
 
 /* Hero / Headshot STYLES START */
   .hero {
-    display: flex
+    display: flex;
+    background-image: url(../images/hero-image.jpg);
   }
 
   .hero img {
-    width: 20%;
+    width: auto;
+    max-height: 275px;
   }
 /* Hero / Headshot STYLES END */
 
   
   /* FOOTER STYLES START */
   footer {
-    background-color: #8d38fc;
+    background-color: #6c36b3;
     padding: 40px 35px;
     display: flex;
     justify-content: space-between;
@@ -103,10 +110,15 @@
     width: 35%;
   }
 
+  .section-title h2 {
+    margin-right: 100%;
+    width: max-content;
+ }
+
   .primary-sections {
     padding: 15px 0;
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   } 
 
@@ -119,20 +131,13 @@
 
   .projects {
     display: block;
-    /*
-    width: 100%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 5px 0;*/
   }
   .project {
-    margin: 20px;
     flex: 1;
   }
   
   .project img {
-    max-width: 350px;
+    max-width: 345px;
     height: auto;
   }
  
@@ -144,6 +149,7 @@
 
   .secondary-projects {
     display: flex;
+    justify-content: space-between; /*not having any affect?*/
   }
 
   .project-title h3 {
@@ -187,6 +193,7 @@
       text-align: center;
       width: 100%;
     }
+  }
     
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
@@ -205,3 +212,4 @@
     align-items: center;
   }
 
+}
