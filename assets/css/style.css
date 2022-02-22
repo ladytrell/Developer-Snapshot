@@ -83,6 +83,7 @@
     /* try to use flex-basis to shorten gap beteen title and links*/
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 15px;
   }
   
   footer h2 {  
@@ -106,36 +107,39 @@
   }
    /* FOOTER STYLES END */
 
-   .section-title {
-    width: 35%;
-  }
-
-  .section-title h2 {
-    margin-right: 100%;
-    width: max-content;
- }
-
   .primary-sections {
-    padding: 15px 0;
     display: flex;
     width: 100%;
     margin: 0 auto;
   } 
 
-/* About STYLES START */
-  
-  /* About STYLES END */
+  .section-title {
+    flex: 0 0 20%;
+    padding-top: 15px;   
+    padding-left: 15px;
+  }
 
-  /* Projects STYLES START */
-  
+/* About STYLES START */ 
+  .about article {
+    padding-top: 15px;   
+    padding-right: 15px; 
+  } 
+/* About STYLES END */
 
+/* Projects STYLES START */
   .projects {
-    display: block;
+    display: flex; 
+    flex-wrap: wrap;
   }
   .project {
-    flex: 1;
+    flex: 0 0 35%;
   }
   
+  .primary-project {
+    padding-top: 15px;    
+    padding-right: 15px;
+    flex: 0 0 80%;
+  }
   .project img {
     max-width: 345px;
     height: auto;
@@ -148,8 +152,10 @@
   }
 
   .secondary-projects {
+    padding-top: 15px;    
+    padding-right: 15px;
     display: flex;
-    justify-content: space-between; /*not having any affect?*/
+    flex: 0 0 80%;
   }
 
   .project-title h3 {
@@ -196,20 +202,40 @@
   }
     
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media screen and (max-width: 768px) {
+  @media screen and (max-width: 830px) {
+    .primary-sections {
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+    } 
+
+    .section-title {
+      flex: 0 0 100%;
+      padding-top: 15px;
+      padding-left: 0;
+    }
+
+    .primary-project img{
+      min-width: 300px;
+      max-width: 100%;
+    }
+
+    .secondary-projects {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
     
+    .project img{
+      min-width: 200px;
+      max-width: 75%;
+    }
   }
   
+ 
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media screen and (max-width: 575px) {
+  @media screen and (max-width: 575px) {
     
-  .hero img {
-    width: 100%;
-  }
-
-  .secondary-projects {
-    flex-flow: column;
-    align-items: center;
-  }
+  
 
 }
