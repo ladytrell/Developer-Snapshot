@@ -1,7 +1,8 @@
 :root {
     --primary-color: #6c36b3;
+    --secondar-color: hsl(180, 80%, 67%);
     --top-padding: 30px;
-    --right-padding: 15px:
+    --right-padding: 15px;
   }
   
 * {
@@ -10,8 +11,12 @@
     padding: 0;
  }
 
+ body {
+  background-color: aliceblue;
+ }
+
   a {
-    color: var( --primary-color);
+    color: var(--primary-color);
     text-decoration: none;
   }
 
@@ -26,7 +31,7 @@
   /* HEADER / NAV BAR STYLES START */
   
   header {
-    background-color: var( --primary-color); 
+    background-color: var(--primary-color); 
     padding: 20px 35px;
     display: flex;
     justify-content: space-between;
@@ -45,7 +50,7 @@
   }
   
   header a {
-    text-decoration: none;
+    text-decoration: underline;
   }
   
   header nav {
@@ -61,7 +66,7 @@
   }
   
   header nav ul li a {   
-    color: white;
+    color: var(--secondar-color);
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
@@ -89,14 +94,19 @@
 
   .section-title {
     flex: 0 0 20%;
-    padding-top: var(--top-padding);   
-    padding-left: 15px;
-  }
+    border-right: var(--primary-color) solid;
+    padding-right: var(--right-padding);
+    margin-top: 26px;
+    margin-right: 25px;
+    color: var(--primary-color);
+    text-align: right;
+    font-size: 1.7em;
+ }
 
 /* About STYLES START */ 
-  .about article {
-    padding-top: var(--top-padding);    
-    padding-right: var( --right-padding);  
+  .about article {  
+    padding-right: var(--right-padding); 
+    padding-top: var(--top-padding);  
   } 
 /* About STYLES END */
 
@@ -105,31 +115,29 @@
     display: flex; 
     flex-wrap: wrap;
   }
-  .project {
-    flex: 0 0 45%;
-  }
   
   .primary-project {
     padding-top: var(--top-padding);     
-    padding-right: var( --right-padding); 
+    padding-right: var(--right-padding); 
     flex: 0 0 100%;
   }
-  .project img {
+
+  .projects img {
     max-width: 100%;
     height: auto;
-  }
- 
-  .primary-project img {
-    max-width: 100%;
-    height: auto;
+    border: var(--secondar-color) solid;
   }
 
   .secondary-projects {
     padding-top: var(--top-padding);     
-    padding-right: var( --right-padding); 
+    padding-right: var(--right-padding); 
     display: flex;
     flex: 0 0 100%;
     justify-content: space-between;
+  }
+
+  .project {
+    flex: 0 0 45%;
   }
 
   .project-title h3 {
@@ -143,7 +151,7 @@
   }
   /* Projects STYLES END */
 
-   
+ /*.contacts ul {  */
  ul.contacts {
     display: flex;
     flex-wrap: wrap;
@@ -154,6 +162,10 @@
     padding-top: var(--top-padding);   
   }
   
+  .contacts a {
+    text-decoration: underline;
+  }
+
   /* UTILITIES */ 
   .flex-row {
     display: flex;
@@ -198,6 +210,7 @@
       flex: 0 0 100%;
       padding-top: 15px;
       padding-left: 0;
+      text-align: right;
     }
 
     .primary-project img{
