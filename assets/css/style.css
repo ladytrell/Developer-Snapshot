@@ -3,6 +3,7 @@
     --secondar-color: hsl(180, 80%, 67%);
     --top-padding: 30px;
     --right-padding: 15px;
+    --shift: 40px;
   }
   
 * {
@@ -22,6 +23,7 @@
 
   p {
     padding-bottom: 15px;
+    color: var(--primary-color);
   }
   .primary-content {
     max-width: 1028px;
@@ -33,28 +35,35 @@
   header {
     background-color: var(--primary-color); 
     padding: 20px 35px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     position: -webkit-sticky; /*Safari support*/
     position: sticky;
     top: 0;
     z-index: 9999; /*Stack order top*/
-  }
-  
-  header h1 {
-    color: white;
-    font-weight: bold;
-    margin: 0;
-    font-size: 36px;
+    height: 4.2em;
   }
   
   header a {
     text-decoration: underline;
   }
   
+  header h1 {
+    margin: 0;
+    font-size: 3em;
+    left: 0;
+    top: 0;
+  }
+ 
+  #header-title {
+    padding: 0 5px 0 var(--shift);
+  }
+
+  header h1 a {
+    text-decoration: none;
+  }
+
   header nav {
-    margin: 7px 0;
+    position: absolute;
+    right: var(--shift);
   }
   
   header nav ul { 
@@ -78,11 +87,17 @@
   .hero {
     display: flex;
     background-image: url(../images/hero-image.jpg);
+    position: relative;
   }
 
   .hero img {
     width: auto;
     max-height: 275px;
+  }
+
+  .hero h2 {
+    right: 45px;
+    bottom: 20px;
   }
 /* Hero / Headshot STYLES END */
 
@@ -90,6 +105,7 @@
     display: flex;
     width: 100%;
     margin: 0 auto;
+    padding: 0 var(--shift);
   } 
 
   .section-title {
@@ -115,7 +131,11 @@
     display: flex; 
     flex-wrap: wrap;
   }
-  
+
+  .projects article {
+    position: relative;
+  } 
+
   .primary-project {
     padding-top: var(--top-padding);     
     padding-right: var(--right-padding); 
@@ -151,8 +171,7 @@
   }
   /* Projects STYLES END */
 
- /*.contacts ul {  */
- ul.contacts {
+ .contacts {  
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -169,6 +188,16 @@
   /* UTILITIES */ 
   .flex-row {
     display: flex;
+  }
+
+  .title-box {    
+    color: var(--primary-color);
+    background-color: var(--secondar-color);
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    bottom: 25px;
   }
 
   @media screen and (max-width: 980px) {
@@ -243,6 +272,13 @@
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
   @media screen and (max-width: 575px) {
     
-  
+  .header {    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
+  .header nav {
+    margin: 7px 0;    
+  }
 }
