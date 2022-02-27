@@ -1,8 +1,8 @@
 :root {
     --primary-color: #6c36b3;
-    --secondar-color: hsl(180, 80%, 67%);
-    --top-padding: 30px;
-    --right-padding: 15px;
+    --secondary-color: hsl(180, 80%, 67%);
+    --primary-space: 30px;
+    --secondary-space: 15px;
     --shift: 40px;
   }
   
@@ -22,7 +22,7 @@
   }
 
   p {
-    padding-bottom: 15px;
+    padding-bottom: var(--secondary-space);
     color: var(--primary-color);
   }
   .primary-content {
@@ -75,8 +75,8 @@
   }
   
   header nav ul li a {   
-    color: var(--secondar-color);
-    padding: 10px 15px;
+    color: var(--secondary-color);
+    padding: 10px var(--secondary-space);
     font-weight: lighter;
     font-size: 1.55vw;
   }
@@ -111,7 +111,7 @@
   .section-title {
     flex: 0 0 20%;
     border-right: var(--primary-color) solid;
-    padding-right: var(--right-padding);
+    padding-right: var(--secondary-space);
     margin-top: 26px;
     margin-right: 25px;
     color: var(--primary-color);
@@ -121,8 +121,8 @@
 
 /* About STYLES START */ 
   .about article {  
-    padding-right: var(--right-padding); 
-    padding-top: var(--top-padding);  
+    padding-right: var(--secondary-space); 
+    padding-top: var(--primary-space);  
   } 
 /* About STYLES END */
 
@@ -137,20 +137,26 @@
   } 
 
   .primary-project {
-    padding-top: var(--top-padding);     
-    padding-right: var(--right-padding); 
+    padding-top: var(--primary-space);     
+    padding-right: var(--secondary-space); 
     flex: 0 0 100%;
   }
 
   .projects img {
     max-width: 100%;
     height: auto;
-    border: var(--secondar-color) solid;
+    border: var(--secondary-color) solid;
+    opacity: 0.5;
+
+  }
+
+  .projects img:hover {
+    opacity: 1.0;
   }
 
   .secondary-projects {
-    padding-top: var(--top-padding);     
-    padding-right: var(--right-padding); 
+    padding-top: var(--primary-space);     
+    padding-right: var(--secondary-space); 
     display: flex;
     flex: 0 0 100%;
     justify-content: space-between;
@@ -167,7 +173,7 @@
   .project-subtitle h4 {
     font-weight: lighter;
     font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: var(--secondary-space);
   }
   /* Projects STYLES END */
 
@@ -178,7 +184,7 @@
     align-items: center;
     list-style: none;
     flex: 0 0 60%;
-    padding-top: var(--top-padding);   
+    padding-top: var(--primary-space);   
   }
   
   .contacts a {
@@ -192,7 +198,7 @@
 
   .title-box {    
     color: var(--primary-color);
-    background-color: var(--secondar-color);
+    background-color: var(--secondary-color);
     position: absolute;
     width: fit-content;
     height: fit-content;
@@ -229,6 +235,10 @@
     
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
   @media screen and (max-width: 830px) {
+    header nav {
+      bottom: var(--secondary-space);
+    }
+    
     .primary-sections {
       display: flex;
       flex-wrap: wrap;
@@ -237,9 +247,12 @@
 
     .section-title {
       flex: 0 0 100%;
-      padding-top: 15px;
+      padding-top: var(--secondary-space);
       padding-left: 0;
-      text-align: right;
+      text-align: left;    
+      border-bottom: var(--primary-color) solid;
+      border-right: none;
+
     }
 
     .primary-project img{
@@ -263,7 +276,8 @@
       align-items: center;
       list-style: none;
       flex: 0 0 100%;
-      padding-top: var(--top-padding);   
+      padding-top: var(--primary-space);       
+      padding-bottom: var(--primary-space);   
     }
     
   }
@@ -272,13 +286,57 @@
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
   @media screen and (max-width: 575px) {
     
-  .header {    
+  header {    
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0;
+    height: auto;
   }
 
-  .header nav {
-    margin: 7px 0;    
+  header nav {
+    margin: 7px 0;   
+    position: relative;
+    padding: 0;
+    flex: 0 0 100%; 
+    right: unset;
+  }
+
+  h1#header-title {
+    position: relative;
+    padding: 0;
+    flex: 0 0 100%;
+  }
+
+  header h1 .title-box {
+    position: relative;
+  }
+
+  .hero {
+    flex-wrap: wrap;
+    flex-direction:column;
+  }
+  .hero h2 {
+    bottom: 5px;
+    right: unset;
+    margin: 5px auto;
+    flex: 0 0 100%;
+    position: unset;
+  }
+
+  .hero img {
+    margin: 0 auto;
+  }
+
+  .primary-project {
+    padding-right: unset;
+  }
+
+  .secondary-projects {
+    padding-right: unset;
+  }
+
+  .project {
+    flex: 0 0 100%;
   }
 }
+
