@@ -327,11 +327,7 @@
     margin: 0 auto;
   }
 
-  .primary-project {
-    padding-right: unset;
-  }
-
-  .secondary-projects {
+  .primary-project, .secondary-projects {
     padding-right: unset;
   }
 
